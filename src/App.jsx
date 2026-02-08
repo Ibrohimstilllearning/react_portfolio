@@ -1,4 +1,5 @@
 import DataImage from "./data";
+import { listTools } from "./data";
 function App() {
   return (
     <>
@@ -35,6 +36,47 @@ function App() {
           alt="Hero Image"
           className="w-[500] md:ml-auto"
         />
+      </div>
+     
+      {/* About */}
+      <div className="about mt-32 py-10">
+        <div className="xl:w-2/3 lg:w-3/4 mx-auto p-7 bg-zinc-800 rounded-lg">
+        <img src={DataImage.HeroImage} alt="Image" className="w-12 rounded-md mb-10 sm:hidden" />
+          <p className="text-base/loose mb-10">
+          Hi, perkenalkan saya Ibrohim, seorang pengembang web dan aplikasi
+          mobile dengan pengalaman lebih dari 2 tahun. Saya memiliki keahlian dalam membangun aplikasi web menggunakan React dan pengembangan aplikasi mobile dengan Flutter. Selain itu, saya juga berpengalaman dalam menggunakan Laravel untuk manajemen database. Saya sangat antusias dalam menciptakan solusi digital yang inovatif dan efisien.
+        </p>
+        <div className="flex items-center justify-between">
+          <img src={DataImage.HeroImage} alt="About Image" className="w-12 rounded-md sm:block hidden" />
+          <div className="flex items-center gap-6">
+            <h1 className="text-4xl mb-1">
+              20<span className="text-violet-500">+</span>
+            </h1>
+            <p>Proyek Selesai</p>
+          </div>
+          <div>
+            <h1 className="text-4xl mb-1">
+              2<span className="text-violet-500">+</span>
+            </h1>
+            <p>Tahun Pengalaman</p>
+          </div>
+        </div>
+         </div>
+      </div>
+       <div className="tools mt-32">
+        <h1 className="text-4xl/snug font-bold mb-4">Tools/Bahasa yang dipakai</h1>
+        <p className="xl:w-2/5 lg:w-2/4 md:w-2/3 sm:w-3/4 w-full text-base/loose opacity-50">Berikut adalah beberapa tools dan bahasa pemrograman yang saya kuasai:</p>
+        <div className="tools-box mt-14 grid lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-4">
+          {listTools.map(tool => (
+            <div className="flex items-center gap-2 p-3 border border-zinc-600 rounded-md hover:bg-zinc-800 group" key={tool.id}>
+            <img src={tool.gambar} alt="" className="w-14 bg-zinc-800 p-1 group-hover:bg-zinc-900" />
+            <div>
+              <h4 className="font-bold">{tool.nama}</h4>
+              <p className="opacity-50">{tool.ket}</p>
+            </div>
+          </div>
+          ))}
+        </div>
       </div>
     </>
   );
