@@ -4,6 +4,7 @@ import './index.css'
 import App from './App.jsx'
 import Navbar from './components/Navbar.jsx'
 
+
 import 'remixicon/fonts/remixicon.css'
 
 createRoot(document.getElementById('root')).render(
@@ -11,6 +12,7 @@ createRoot(document.getElementById('root')).render(
     <div className='container mx-auto px-10'>
       <Navbar />
       <App />
+      <Footer />
     </div>
   </StrictMode>,
 )
