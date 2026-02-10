@@ -1,5 +1,5 @@
 import DataImage from "./data";
-import { listTools } from "./data";
+import { listTools, listProyek } from "./data";
 function App() {
   return (
     <>
@@ -10,6 +10,7 @@ function App() {
               src={DataImage.HeroImage}
               alt="Hero Image"
               className="w-10 rounded-md"
+              loading="lazy"
             />
             <p>In Code, We Grow.👌</p>
           </div>
@@ -35,13 +36,14 @@ function App() {
           src={DataImage.HeroImage}
           alt="Hero Image"
           className="w-[500] md:ml-auto"
+          loading="lazy"
         />
       </div>
      
       {/* About */}
       <div className="about mt-32 py-10">
         <div className="xl:w-2/3 lg:w-3/4 mx-auto p-7 bg-zinc-800 rounded-lg">
-        <img src={DataImage.HeroImage} alt="Image" className="w-12 rounded-md mb-10 sm:hidden" />
+        <img src={DataImage.HeroImage} alt="Image" className="w-12 rounded-md mb-10 sm:hidden" loading="lazy"/>
           <p className="text-base/loose mb-10">
           Hi, perkenalkan saya Ibrohim, seorang pengembang web dan aplikasi
           mobile dengan pengalaman lebih dari 2 tahun. Saya memiliki keahlian dalam membangun aplikasi web menggunakan React dan pengembangan aplikasi mobile dengan Flutter. Selain itu, saya juga berpengalaman dalam menggunakan Laravel untuk manajemen database. Saya sangat antusias dalam menciptakan solusi digital yang inovatif dan efisien.
@@ -78,6 +80,37 @@ function App() {
           ))}
         </div>
       </div>
+      {/* About END */}
+
+      {/* Project */}
+      
+      <div className="proyek mt-32 py-10">
+        <h1 className="text-center text-4xl font-bold mb-2">Project</h1>
+        <p className="text-base/loose text-center opacity-50">
+          Berikut adalah beberapa proyek yang telah saya buat.
+        </p>
+        <div className="proyek-box mt-14 grid lg:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-4">
+          {listProyek.map(proyek => (
+            <div key={proyek.id} className="p-4 bg-zinc-800 rounded-md">
+              <img src={proyek.gambar} alt="" loading="lazy" />
+              <div>
+                <h1 className="text-2xl font-bold my-4">{proyek.nama}</h1>
+                <p className="text-base/loose mb-4">{proyek.desk}</p>
+                <div className="flex flex-wrap gap-2 ">
+                  {proyek.tools.map((tool, index) => (
+                    <p className="py-1 px-3 border border-zinc-500 bg-zinc-600 rounded-md" key={index}>{tool}</p>
+                  ))}
+                </div>
+                <div className="mt-8 text-center">
+                <a href="#" className="bg-violet-700 p-3 rounded-lg block border border-zinc-600 hover:bg-violet-600">Lihat Website</a>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+      
+      {/* Project END */}
     </>
   );
 }
