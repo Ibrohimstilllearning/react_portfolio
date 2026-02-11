@@ -1,8 +1,8 @@
 const Footer = () => {
     return (
-    <div className="mt-32 py-4 flex justify-between items-center">
+    <div className="mt-32 py-4 flex md:flex-row flex-col gap-6 md:gap-0 justify-between items-center">
         <h1 className="text-2xl font-bold">Portfolio</h1>
-        <div className="flex gap-7">
+        <div className="flex gap-7 items-center">
             <a href="#">Beranda</a>
             <a href="#">Tentang</a>
             <a href="#">Proyek</a>
@@ -24,3 +24,5 @@ const Footer = () => {
     </div>
     );
 }
+
+export default Footer
